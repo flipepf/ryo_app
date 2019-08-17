@@ -9,8 +9,7 @@ class CategoriasTab extends StatelessWidget {
       future: Firestore.instance.collection("produtos").getDocuments(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) //SE RETORNOU VAZIO
-          return Center(
-            child: CircularProgressIndicator(),); //ANIMAÇÃO DE CARREGANDO
+          return Center(child: CircularProgressIndicator(),); //ANIMAÇÃO DE CARREGANDO
         else {
           var dividedTiles = ListTile
               .divideTiles(

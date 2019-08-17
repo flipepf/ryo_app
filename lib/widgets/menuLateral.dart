@@ -17,8 +17,6 @@ class MenuLateral extends StatelessWidget {
           Color.fromARGB(255, 255, 255, 255)
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)));
     //##########################################################################
-
-
     return Drawer(
         child: Stack(children: <Widget>[
       _fundo(),
