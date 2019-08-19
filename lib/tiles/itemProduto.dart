@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ryo_app/datas/produtoData.dart';
+import 'package:ryo_app/pages/produtoPage.dart';
 import 'package:ryo_app/pages/produtosPage.dart';
 
 class ItemProduto extends StatelessWidget {

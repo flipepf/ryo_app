@@ -12,7 +12,7 @@ class HomeTab extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 100, 0, 0),
+            Color.fromARGB(255, 180, 0, 0),
             Color.fromARGB(255, 0, 0, 0)
           ],
           begin: Alignment.topCenter,
@@ -34,7 +34,7 @@ class HomeTab extends StatelessWidget {
               backgroundColor: Colors.transparent, //COR TRANSPARENTE PARA QUE APAREÇA O FUNDO
               elevation: 0.0,     // FICA NO MESMO PLANO DO CONTEÚDO
               flexibleSpace: FlexibleSpaceBar(
-                title: const Text("Promoções"),
+                title: const Text("Promoções", style: TextStyle(fontSize: 22)),
                 centerTitle: true
               )
             ),
