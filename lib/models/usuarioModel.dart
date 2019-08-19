@@ -14,9 +14,9 @@ class UsuarioModel extends Model {
       Map(); //MAP QUE ARMAZENARA OS DADOS DO USUARIO
 
   bool isLoading = false;
-
-  static UsuarioModel of(BuildContext context) =>
-      ScopedModel.of<UsuarioModel>(context);
+  //METODO ESTATICO (DA CLASSE, NÃO DO OBJETO) RETORNA UM SCOPED MODEL PARA QUE POSSA TER ACESSO AO UsuarioModel DE QUALQUER PARTE DO APP
+  //SEM QUE SEJA NECESSARIO UTILIZAR O ScopedModelDescendant
+  static UsuarioModel of(BuildContext context) => ScopedModel.of<UsuarioModel>(context);
   //####################################################### SUBSCREVE O LISTENER
   @override
   void addListener(VoidCallback listener) {

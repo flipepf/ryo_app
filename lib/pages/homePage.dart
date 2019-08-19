@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ryo_app/tabs/homeTab.dart';
+import 'package:ryo_app/widgets/botaoCarrinho.dart';
 import 'package:ryo_app/widgets/menuLateral.dart';
 import 'package:ryo_app/tabs/categoriasTab.dart';
 
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
         Scaffold (
           body: HomeTab(),
           drawer: MenuLateral(_pageController),
+          floatingActionButton: BotaoCarrinho(),
         ),
         Scaffold(
           appBar: AppBar(
@@ -23,6 +25,7 @@ class HomePage extends StatelessWidget {
         ),
           drawer: MenuLateral(_pageController),
           body: CategoriasTab(),
+          floatingActionButton: BotaoCarrinho(),
         ),
       ]
     );

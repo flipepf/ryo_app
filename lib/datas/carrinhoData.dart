@@ -7,9 +7,9 @@ class CarrinhoData {
   String categoria;
   String produtoId;
   int quantidade;
-  ProdutoData productData;
+  ProdutoData produtoData;
 
-  CarrinhoData();
+  CarrinhoData(); //CONSTRUTOR
 
   CarrinhoData.fromDocument(DocumentSnapshot document){
     id = document.documentID;
@@ -23,7 +23,7 @@ class CarrinhoData {
       "categoria": categoria,
       "produtoId": produtoId,
       "quantidade": quantidade,
-      "produto": productData.toResumedMap() //PASSA APENAS UM RESUMO DO PRODUTO
+      //"produto": produtoData.toResumedMap() //PASSA APENAS UM RESUMO DO PRODUTO
     };
   }
 

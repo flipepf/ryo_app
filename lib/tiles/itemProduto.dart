@@ -40,7 +40,7 @@ class ItemProduto extends StatelessWidget {
                     // ######################################### NOME DO PRODUTO
                     Text(
                       produto.nome,
-                      style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.w900),
+                      style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.w700),
                       textAlign: TextAlign.center,
                     ),
                     // ######################################## VALOR DO PRODUTO
@@ -48,7 +48,7 @@ class ItemProduto extends StatelessWidget {
                       "R\$ ${produto.valor.toStringAsFixed(2)}",
                       style: TextStyle(
                           color: Theme.of(context).primaryColor,
-                          fontSize: 19.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold),
                     )
                   ],
@@ -80,7 +80,7 @@ class ItemProduto extends StatelessWidget {
                     // ######################################### NOME DO PRODUTO
                     Text(
                       produto.nome,
-                      style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w900),
+                      style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w700),
                     ),
                     // ######################################## VALOR DO PRODUTO
                     Text(

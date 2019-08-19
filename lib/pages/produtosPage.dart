@@ -45,7 +45,7 @@ class ProdutosPage extends StatelessWidget {
                             itemCount: snapshot.data.documents.length, //DEFINE QUANTOS ITEMS TEM NO GRID, SEGUNDO A QUANTIDADE DE DOCUMENTOS QUE O SNAPSHOT RETORNOU
                             itemBuilder: (context, index){
                               ProdutoData data = ProdutoData.fromDocument(snapshot.data.documents[index]); //TRANSFORMA CADA DOCUMENTO QUE RETORNA EM UM OBJETO DO TIPO ProdutoData
-                              data.categoria = this.snapshot.documentID;
+                              data.categoria = this.snapshot.documentID; //SALVANDO A CATEGORIA DO PRODUTO DENTRO DO PRÓRPIO PRODUTO PARA SER UTILIZADA DEPOIS NO CARRINHO
                               return ItemProduto("grid", data);
                             }
                         ),
