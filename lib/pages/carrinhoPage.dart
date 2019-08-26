@@ -3,6 +3,8 @@ import 'package:ryo_app/models/carrinhoModel.dart';
 import 'package:ryo_app/models/usuarioModel.dart';
 import 'package:ryo_app/pages/loginPage.dart';
 import 'package:ryo_app/tiles/ItemCarrinho.dart';
+import 'package:ryo_app/widgets/cardDesconto.dart';
+import 'package:ryo_app/widgets/cardTotal.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CarrinhoPage extends StatelessWidget {
@@ -94,15 +96,16 @@ class CarrinhoPage extends StatelessWidget {
                   return ItemCarrinho(produto);
                 }).toList(),
               ),
-              //DiscountCard(),
-              //ShipCard(),
-              /*CartPrice(() async {
-                    String orderId = await model.finishOrder();
-                    if(orderId != null)
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context)=>OrderScreen(orderId))
-                      );
-                  }),*/
+              CardDesconto(),
+              //CardeEntrega(),
+              CardTotal(() async {
+                    String idPedido = await model.finalizarPedido();
+                    if(idPedido != null) //SE RETORNOU O PEDIDO
+                      print(idPedido);
+                      /*Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context)=>OrderScreen(idPedido))
+                      );*/
+                  }),
             ],
           );
         }
