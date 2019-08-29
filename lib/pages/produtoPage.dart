@@ -73,7 +73,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
                         prod.quantidade = 1;
                         prod.produtoId = produto.id;
                         prod.categoria = produto.categoria;
-                        //produto.ProdutoData = produto;
+                        prod.produtoData = produto;
                         CarrinhoModel.of(context).addItemCarrinho(prod);
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => CarrinhoPage()));

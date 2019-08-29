@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ryo_app/models/carrinhoModel.dart';
 import 'package:ryo_app/models/usuarioModel.dart';
 import 'package:ryo_app/pages/loginPage.dart';
+import 'package:ryo_app/pages/pedidoPage.dart';
 import 'package:ryo_app/tiles/ItemCarrinho.dart';
 import 'package:ryo_app/widgets/cardDesconto.dart';
 import 'package:ryo_app/widgets/cardTotal.dart';
@@ -101,10 +102,9 @@ class CarrinhoPage extends StatelessWidget {
               CardTotal(() async {
                     String idPedido = await model.finalizarPedido();
                     if(idPedido != null) //SE RETORNOU O PEDIDO
-                      print(idPedido);
-                      /*Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context)=>OrderScreen(idPedido))
-                      );*/
+                      Navigator.of(context).pushReplacement( // pushReplacement SUBSTITUI A TELA PELA PedidoPage
+                          MaterialPageRoute(builder: (context)=>PedidoPage(idPedido))
+                      );
                   }),
             ],
           );

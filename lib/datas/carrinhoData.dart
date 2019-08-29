@@ -23,7 +23,7 @@ class CarrinhoData {
       "categoria": categoria,
       "produtoId": produtoId,
       "quantidade": quantidade,
-      //"produto": produtoData.toResumedMap() //PASSA APENAS UM RESUMO DO PRODUTO
+      "produto": produtoData.toResumedMap() //PASSA APENAS UM RESUMO DO PRODUTO
     };
   }
 
