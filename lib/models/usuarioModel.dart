@@ -10,8 +10,7 @@ class UsuarioModel extends Model {
   FirebaseAuth _auth = FirebaseAuth.instance; //OBJETO PARA ARMAZENAR A STRING
 
   FirebaseUser firebaseUser; //OBJETO QUE ARMAZENA O USUARIO LOGADO NO MOMENTO
-  Map<String, dynamic> dadosUsuario =
-      Map(); //MAP QUE ARMAZENARA OS DADOS DO USUARIO
+  Map<String, dynamic> dadosUsuario = Map(); //MAP QUE ARMAZENARA OS DADOS DO USUARIO
 
   bool isLoading = false;
   //METODO ESTATICO (DA CLASSE, NÃO DO OBJETO) RETORNA UM SCOPED MODEL PARA QUE POSSA TER ACESSO AO UsuarioModel DE QUALQUER PARTE DO APP
@@ -70,24 +69,22 @@ class UsuarioModel extends Model {
       @required String pass,
       @required VoidCallback onSuccess,
       @required VoidCallback onFail}) async {
-    isLoading = true; //SINALIZA QUE ESTA CARREGANDO
-    notifyListeners(); //INFORMA QUE HOUVE ALTERAÇÃO E POR ISO É PRECISO ALTERAR A VIEW
-    _auth
+    isLoading = true;
+    notifyListeners();
+    FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: pass)
         .then((user) async {
-      //######################### SE OCORREU TUDO CERTO
-      firebaseUser = user;
-      await _loadCurrentUser(); //CHAMA A FUNÇÃO QUE CAREGA OS DADOS DO USUARIO PARA O MAP
-      onSuccess();
-      isLoading = false;
-      notifyListeners();
-      //######################################CASO ERRO
-    }).catchError((e) {
-      onFail();
-      isLoading = false;
-      notifyListeners();
-    });
-  }
+          firebaseUser = user;
+          await _loadCurrentUser();
+          onSuccess();
+          isLoading = false;
+          notifyListeners();
+        }).catchError((e) {
+          onFail();
+          isLoading = false;
+          notifyListeners();
+        });
+    }
   //####################################################################### SAIR
   void signOut() async {
     await _auth.signOut();
@@ -105,7 +102,7 @@ class UsuarioModel extends Model {
   }
   //############################################# CARREGA DADOS DO USUARIO ATUAL
   Future<Null> _loadCurrentUser() async {
-    //SE O USUARIO FOR NULO TENTA PEGAR O USUARIO ATUAL N O FIREBASE
+    //SE O USUARIO FOR NULO TENTA PEGAR O USUARIO ATUAL NO FIREBASE
     if (firebaseUser == null) firebaseUser = await _auth.currentUser();
     if (firebaseUser != null) {
       //SE CARREGOU COM SUCESSO

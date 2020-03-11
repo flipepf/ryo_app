@@ -75,10 +75,8 @@ class ItemPedido extends StatelessWidget {
   }
   //#################### FUNÇÃO QUE CRIA OS CIRCULOS DE ACOMPANHAMENTO DO PEDIDO
   Widget _buildCirculo(String titulo, String subTitulo, int status, int numeroIcone){
-
     Color corFundo;
     Widget filho;
-
     //############################## SE O STATUS É MENOR QUE O NUMERO DO CIRCULO
     if(status < numeroIcone){
       corFundo = Colors.grey[500]; //COR DE FUNDO CINZA

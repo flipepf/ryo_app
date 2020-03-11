@@ -85,7 +85,7 @@ class CarrinhoModel extends Model {
   Future<String> finalizarPedido() async {
     if(produtos.length == 0) return null; //SE A LISTA DE PRODUTOS ESTIVER VAZIA
     isLoading = true; // INFORMA QUE HAVERÁ PROCESSAMENTO - CARREGANDO = TRUE
-    notifyListeners(); // NOTIFICA OS LISTENNERS PARA MOSTRAR O SIMBOLO DE CAREGANDO
+    notifyListeners(); // NOTIFICA OS LISTENERS PARA MOSTRAR O SIMBOLO DE CAREGANDO
     //###################### PREENCHE OS TRES VALORES COM OS VALORES DOS OBJETOS
     double valorProdutos = getValorProdutos();
     double valorEntrega = getValorEntrega();

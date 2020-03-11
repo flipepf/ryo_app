@@ -38,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             )
           ],
         ),
+        //######################################################################
         body: ScopedModelDescendant<UsuarioModel>( //ScopedModelDescendant FORMA DE ACESSAR O MODELO
           builder: (context, child, model) {
             if (model.isLoading) //SE ESTIVER CARREGANDO
