@@ -3,7 +3,6 @@ import 'package:ryo_app/pages/criarContaPage.dart';
 import 'package:ryo_app/pages/homePage.dart';
 import 'package:ryo_app/pages/loginPage.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 import 'models/carrinhoModel.dart';
 import 'models/usuarioModel.dart';
 

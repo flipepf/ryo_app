@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ryo_app/models/usuarioModel.dart';
 import 'package:scoped_model/scoped_model.dart';
+import '../firebase_messaging.dart';
 
 class CriarContaPage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
   final _endController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final token = new FirebaseNotifications().pegaToken();
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +103,8 @@ class _CriarContaPageState extends State<CriarContaPage> {
                         Map<String, dynamic> dadosUsuario = {
                           "nome": _nomeController.text,
                           "email": _emailController.text,
-                          "endereço": _endController.text
+                          "endereço": _endController.text,
+                          "token:": token.toString(),
                         };
                         model.signUp(
                           dadosUsuario: dadosUsuario,
