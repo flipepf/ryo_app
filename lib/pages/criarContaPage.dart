@@ -15,7 +15,17 @@ class _CriarContaPageState extends State<CriarContaPage> {
   final _endController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final token = new FirebaseNotifications().pegaToken();
+  final _firebaseNotifications = new FirebaseNotifications();
+
+
+  @override
+  void initState() {
+    super.initState();
+    _firebaseNotifications.iniciarFirebaseListeners();
+
+  }
+
+  //final token = FirebaseNotifications().PegaToken();
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +114,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
                           "nome": _nomeController.text,
                           "email": _emailController.text,
                           "endereço": _endController.text,
-                          "token:": token.toString(),
+                          "token:": _firebaseNotifications.PegaToken()
                         };
                         model.signUp(
                           dadosUsuario: dadosUsuario,

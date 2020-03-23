@@ -3,13 +3,9 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 class FirebaseNotifications {
   final FirebaseMessaging _firebaseMessaging = new FirebaseMessaging();
+  var Token = "";
 
   FirebaseNotifications();
-
-  /*void setUpFirebase() {
-    _firebaseMessaging = FirebaseMessaging();
-    this.iniciarFirebaseListeners();
-  }*/
 
   void iniciarFirebaseListeners() {
     _firebaseMessaging.configure(
@@ -23,22 +19,29 @@ class FirebaseNotifications {
         print('on launch $message');
       },
     );
-    _firebaseMessaging
-        .requestNotificationPermissions(
+    _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
     _firebaseMessaging.getToken().then((token) {
       print("Firebase token: " + token);
+      Token = token.toString();
+      print("TOKEN: " + Token);
     });
   }
 
-  Future<String> pegaToken() async => _firebaseMessaging.getToken().then((token) {
-      print("pegaToken: " + token);
-      return token;
-    });
+  Future<String> pegaToken() async {
+    final token = await _firebaseMessaging.getToken();
+    print("pegaToken: " + token);
+    return token.toString();
+  }
 
   String PegaToken(){
-    final token = _firebaseMessaging.getToken().toString();
-    print("PegaToken: " + token);
-    return token;
+    print("PEGA TOKEN: " + Token);
+    return Token;
   }
+
+  /*String PegaToken() {
+    final token = _firebaseMessaging.getToken();
+    print("PegaToken: " + token);
+    return token.toString();
+  }*/
 }
