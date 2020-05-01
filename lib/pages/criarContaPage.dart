@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ryo_app/models/usuarioModel.dart';
 import 'package:scoped_model/scoped_model.dart';
-import '../firebase_messaging.dart';
+//import '../firebase_messaging.dart';
 
 class CriarContaPage extends StatefulWidget {
   @override
@@ -15,17 +15,13 @@ class _CriarContaPageState extends State<CriarContaPage> {
   final _endController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final _firebaseNotifications = new FirebaseNotifications();
+  //final _firebaseNotifications = new FirebaseNotifications();
 
-
-  @override
+  /*@override
   void initState() {
     super.initState();
     _firebaseNotifications.iniciarFirebaseListeners();
-
-  }
-
-  //final token = FirebaseNotifications().PegaToken();
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +68,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
                 SizedBox(
                   height: 18.0,
                 ),
-                //############################################## CAIXA TEXTO SENHA
+                //############################################ CAIXA TEXTO SENHA
                 TextFormField(
                   controller: _passController,
                   decoration: InputDecoration(hintText: "Senha"),
@@ -85,7 +81,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
                 SizedBox(
                   height: 18.0,
                 ),
-                //########################################### CAIXA TEXTO ENDEREÇO
+                //######################################### CAIXA TEXTO ENDEREÇO
                 TextFormField(
                   controller: _endController,
                   decoration: InputDecoration(hintText: "Endereço"),
@@ -96,7 +92,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
                 SizedBox(
                   height: 20.0,
                 ),
-                //############################################### BOTÃO CADASTRAR
+                //############################################## BOTÃO CADASTRAR
                 SizedBox(
                   height: 50.0,
                   child: RaisedButton(
@@ -114,7 +110,7 @@ class _CriarContaPageState extends State<CriarContaPage> {
                           "nome": _nomeController.text,
                           "email": _emailController.text,
                           "endereço": _endController.text,
-                          "token:": _firebaseNotifications.PegaToken()
+                          //"token:": _firebaseNotifications.PegaToken()
                         };
                         model.signUp(
                           dadosUsuario: dadosUsuario,

@@ -22,9 +22,9 @@ class FirebaseNotifications {
     _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
     _firebaseMessaging.getToken().then((token) {
-      print("Firebase token: " + token);
+      //print("Firebase token: " + token);
       Token = token.toString();
-      print("TOKEN: " + Token);
+      //print("TOKEN: " + Token);
     });
   }
 
@@ -35,7 +35,7 @@ class FirebaseNotifications {
   }
 
   String PegaToken(){
-    print("PEGA TOKEN: " + Token);
+    //print("PEGA TOKEN: " + Token);
     return Token;
   }
 

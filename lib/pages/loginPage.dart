@@ -45,7 +45,6 @@ class _LoginPageState extends State<LoginPage> {
               return Center(
                 child: CircularProgressIndicator(), //RETORNA ANIMAÇÃO DE CARREGANDO
               );
-
             return Form(
               //CASO O CONTRARIO CARREGA O FORMULARIO
               key: _formKey,
